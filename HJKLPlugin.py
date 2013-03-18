@@ -26,6 +26,7 @@ def swizzle(*args):
         return wrapper
     return decorator
 
+
 orthodox_keymap = {
     4:  123, # h maps to cursor left
     37: 124, # l maps to cursor right
@@ -33,21 +34,45 @@ orthodox_keymap = {
     40: 126  # k maps to cursor down
 }
 
-my_keymap = { # when sorting messages in decreasing date order
+
+list_keymap = {
+    # message list
+    4:  123, # h maps to cursor left
+    37: 124, # l maps to cursor right
+    38: 125, # j maps to cursor down
+    40: 126  # k maps to cursor up
+}
+
+
+msg_keymap = {
+    # message view, when sorting messages in decreasing date order
     4:  115, # h maps to Fn + cursor left
     37: 119, # l maps to Fn + cursor right
     38: 124, # j maps to cursor left  - next message 
     40: 123  # k maps to cursor right - previous message
 }
 
-@swizzle(MessagesTableView, 'keyDown:')
-def keyDown_(self, original, event):
+
+def change_keyDown_(self, original, event, keymap):
     code = event.keyCode()
     NSLog('Handling key %d' % code)
-    if code in my_keymap.keys():
-        NSLog("Changing key %d to %d" % (code, my_keymap[code]))
-        original(self, NSEvent.eventWithCGEvent_(CGEventCreateKeyboardEvent(None,my_keymap[code],True)));
+    if code in keymap.keys():
+        NSLog("Changing key %d to %d" % (code, keymap[code]))
+        original(self, NSEvent.eventWithCGEvent_(CGEventCreateKeyboardEvent(None,keymap[code],True)));
     original(self, event)
+
+
+@swizzle(MailTableView, 'keyDown:')
+def keyDown_(self, original, event):
+    NSLog("RichTableCellView")
+    change_keyDown_(self, original, event, list_keymap)
+
+
+@swizzle(MessagesTableView, 'keyDown:')
+def keyDown_(self, original, event):
+    NSLog("MessagesTableView")
+    change_keyDown_(self, original, event, msg_keymap)
+
 
 NSLog("HJKLPlugin: Attempting MVMailBundle lookup...")
 MVMailBundle = objc.lookUpClass('MVMailBundle')

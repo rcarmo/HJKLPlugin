@@ -7,7 +7,7 @@ A plugin for vim keybindings in Mac OS X Mail
 
 It's a simple plugin that lets you use `vim` keybindings in Mac OS X's Mail.app.
 
-At the moment, it only works on the message view pane (to navigate all messages in a given thread).
+At the moment, it only works on the message view pane (to navigate all messages in a given thread) and in the message list (to move the selection up or down and to expand/collapse threads).
 
 # How do I install it?
 
