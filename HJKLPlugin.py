@@ -55,31 +55,29 @@ msg_keymap = {
 
 def change_keyDown_(self, original, event, keymap):
     code = event.keyCode()
-    NSLog('Handling key %d' % code)
+    #NSLog('Handling key %d' % code)
     if code in keymap.keys():
-        NSLog("Changing key %d to %d" % (code, keymap[code]))
+        #NSLog("Changing key %d to %d" % (code, keymap[code]))
         original(self, NSEvent.eventWithCGEvent_(CGEventCreateKeyboardEvent(None,keymap[code],True)));
     original(self, event)
 
 
 @swizzle(MailTableView, 'keyDown:')
 def keyDown_(self, original, event):
-    NSLog("RichTableCellView")
+    #NSLog("RichTableCellView")
     change_keyDown_(self, original, event, list_keymap)
 
 
 @swizzle(MessagesTableView, 'keyDown:')
 def keyDown_(self, original, event):
-    NSLog("MessagesTableView")
+    #NSLog("MessagesTableView")
     change_keyDown_(self, original, event, msg_keymap)
 
 
-NSLog("HJKLPlugin: Attempting MVMailBundle lookup...")
 MVMailBundle = objc.lookUpClass('MVMailBundle')
 class HJKLPlugin(MVMailBundle):
 
     def initialize (cls):
-        NSLog("HJKLPlugin: Attempting to register bundle...")
         MVMailBundle.registerBundle()
         NSLog("HJKLPlugin: Registered with Mail")
 
