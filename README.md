@@ -13,9 +13,9 @@ At the moment, it only works on the message view pane (to navigate all messages 
 
 Run `install.sh`. That will build and deploy the `.bundle` to your `~/Library/Mail/Bundles` folder.
 
-# What sort of magic is this?
+# What manner of dark magic is this?
 
-It's a bit of Python that swizzles Objective-C methods and handles keypresses, mapping them to the codes Mail.app expects.
+It's a bit of Python that swizzles Objective-C methods and handles keypresses, mapping them to the codes Mail.app expects. The whole codebase fits in a screenful, and you can tweak it to your liking with minimal effort.
 
 # References
 
