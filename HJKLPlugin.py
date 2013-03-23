@@ -53,25 +53,26 @@ msg_keymap = {
 }
 
 
-def change_keyDown_(self, original, event, keymap):
+def change_keyCode_(self, original, event, keymap):
     code = event.keyCode()
     #NSLog('Handling key %d' % code)
     if code in keymap.keys():
-        #NSLog("Changing key %d to %d" % (code, keymap[code]))
+        NSLog("Changing key %d to %d" % (code, keymap[code]))
         original(self, NSEvent.eventWithCGEvent_(CGEventCreateKeyboardEvent(None,keymap[code],True)));
+        return None
     original(self, event)
 
 
 @swizzle(MailTableView, 'keyDown:')
 def keyDown_(self, original, event):
     #NSLog("RichTableCellView")
-    change_keyDown_(self, original, event, list_keymap)
+    change_keyCode_(self, original, event, list_keymap)
 
 
 @swizzle(MessagesTableView, 'keyDown:')
 def keyDown_(self, original, event):
     #NSLog("MessagesTableView")
-    change_keyDown_(self, original, event, msg_keymap)
+    change_keyCode_(self, original, event, msg_keymap)
 
 
 MVMailBundle = objc.lookUpClass('MVMailBundle')
