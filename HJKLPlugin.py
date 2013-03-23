@@ -57,9 +57,9 @@ def change_keyCode_(self, original, event, keymap):
     code = event.keyCode()
     #NSLog('Handling key %d' % code)
     if code in keymap.keys():
-        NSLog("Changing key %d to %d" % (code, keymap[code]))
+        #NSLog("Changing key %d to %d" % (code, keymap[code]))
         original(self, NSEvent.eventWithCGEvent_(CGEventCreateKeyboardEvent(None,keymap[code],True)));
-        return None
+        return None # kill original event
     original(self, event)
 
 
@@ -80,6 +80,6 @@ class HJKLPlugin(MVMailBundle):
 
     def initialize (cls):
         MVMailBundle.registerBundle()
-        NSLog("HJKLPlugin: Registered with Mail")
+        NSLog("Loaded HJKLPlugin Bundle")
 
     initialize = classmethod(initialize)
