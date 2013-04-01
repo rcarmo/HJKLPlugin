@@ -9,6 +9,8 @@ It's a simple plugin that lets you use `vim` keybindings in Mac OS X's Mail.app.
 
 At the moment, it only works on the message view pane (to navigate all messages in a given thread) and in the message list (to move the selection up or down and to expand/collapse threads).
 
+It also allows you to hit `x` to delete a message and `v` to open the _first_ URL in an HTML message in the browser (useful if, like me, you miss Gooogle Reader)
+
 # How do I install it?
 
 Run `install.sh`. That will build and deploy the `.bundle` to your `~/Library/Mail/Bundles` folder.
