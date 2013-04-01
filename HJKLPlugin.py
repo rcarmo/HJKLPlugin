@@ -17,7 +17,9 @@ import subprocess
 from HTMLParser import HTMLParser
 
 class HREFParser(HTMLParser):
-    hrefs = []
+    def __init__(self):
+        self.hrefs = []
+
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
         if tag == 'a' and 'href' in attrs:
