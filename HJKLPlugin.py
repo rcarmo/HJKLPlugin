@@ -18,6 +18,7 @@ from HTMLParser import HTMLParser
 
 class HREFParser(HTMLParser):
     def __init__(self):
+        super(HTMLParser, self).__init__()
         self.hrefs = []
 
     def handle_starttag(self, tag, attrs):
