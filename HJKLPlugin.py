@@ -58,7 +58,7 @@ def view_first_link():
             payload = part.get_payload(None, True).replace('\r','')
             p.feed(payload)
             if len(p.hrefs):
-                subprocess.call("open '%s'" % p.hrefs[0], shell=True)
+                subprocess.call(['/usr/bin/open',p.hrefs[0]])
                 return
 
 
