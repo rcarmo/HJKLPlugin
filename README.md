@@ -13,7 +13,14 @@ It also allows you to hit `x` to delete a message and `v` to open the _first_ UR
 
 # How do I install it?
 
-Run `install.sh`. That will build and deploy the `.bundle` to your `~/Library/Mail/Bundles` folder.
+Before installing the plug-in, you'll need to make sure that Mail.app's plug-in support is turned on. For this, execute the following two commands in Terminal.app:
+
+    defaults write com.apple.mail EnableBundles -bool true
+    defaults write com.apple.mail BundleCompatibilityVersion 3
+
+Run `install.sh` under your own account (i.e., do *not* use `sudo`, under any circumstances!). 
+
+That will build and deploy the `.bundle` to your `~/Library/Mail/Bundles` folder.
 
 # What manner of dark magic is this?
 
