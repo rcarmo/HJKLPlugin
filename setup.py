@@ -15,9 +15,9 @@ plist = {
     'CFBundlePackageType':'APPL',
     'CFBundleName':'HJKLPlugin',
     'CFBundleSignature':'????',
-    'CFBundleGetInfoString':'HJKLPlugin 0.1',
-    'CFBundleVersion':'0.1',
-    'CFBundleShortVersionString':'0.1',
+    'CFBundleGetInfoString':'HJKLPlugin 0.2',
+    'CFBundleVersion':'0.2',
+    'CFBundleShortVersionString':'0.2',
     'SupportedPluginCompatibilityUUIDs': [
         '225E0A48-2CDB-44A6-8D99-A9BB8AF6BA04',
         'B3F3FC72-315D-4323-BE85-7AB76090224D',
@@ -41,7 +41,9 @@ plist = {
         '758F235A-2FD0-4660-9B52-102CD0EA897F',                 
         '3335F782-01E2-4DF1-9E61-F81314124212',    
         '2183B2CD-BEDF-4AA6-AC18-A1BBED2E3354',
-        '19B53E95-0964-4AAB-88F9-6D2F8B7B6037'
+        '19B53E95-0964-4AAB-88F9-6D2F8B7B6037',
+        '2B98D2DD-000B-4521-83EB-7BFCB9B161C8',
+        'DAFFB2B4-77BC-4C25-8CE1-2405E652D54B'
     ]
 }
 setup(
