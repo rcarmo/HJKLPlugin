@@ -5,7 +5,7 @@ A plugin for vim keybindings in Mac OS X Mail
 
 # So what does this do?
 
-It's a simple plugin that lets you use `vim` keybindings in Mac OS X's Mail.app.
+It's a simple plugin that lets you use `vim` keybindings in Mac OS X's Mail.app (up to and including version 6.6, which ships with 10.8.5)
 
 At the moment, it only works on the message view pane (to navigate all messages in a given thread) and in the message list (to move the selection up or down and to expand/collapse threads).
 
@@ -30,3 +30,16 @@ It's a bit of Python that swizzles Objective-C methods and handles keypresses, m
 
 * [vim keybindings for Lion Mail.app](http://the.taoofmac.com/space/blog/2011/08/13/2110)
 * [Making your mail sit up and beg](http://the.taoofmac.com/space/blog/2011/08/11/2240)
+
+# In case of Mac OS X Upgrades
+
+Whenever Apple updates Mail.app, you need to update the compatibility UUIDs in `setup.py` and rebuild the plugin. To figure out the required UUIDs, you need to issue these two commands:
+
+    defaults read /Applications/Mail.app/Contents/Info PluginCompatibilityUUID
+    defaults read /System/Library/Frameworks/Message.framework/Resources/Info PluginCompatibilityUUID
+
+Add the two new UUIDs to `setup.py` and reinstall.
+
+Of course, Apple may well change Mail.app's UI in the future. In that case, you'll need to figure out which Cocoa views are involved and refactor the method swizzling.
+
+In either case, feel free to fork this project and send me a pull request. I am unlikely to upgrade all my machines to bleeding edge versions, so you'll likely to be ahead of me and able to help out others.
