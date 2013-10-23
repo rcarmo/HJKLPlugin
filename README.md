@@ -5,7 +5,7 @@ A plugin for vim keybindings in Mac OS X Mail
 
 # PLEASE NOTE
 
-This is _not_ currently compatible with 10.9 (Mavericks), since Mail.app internals have changed enough for method swizzling to fail. I am looking for a solution, but I wouldn't be surprised if it took a fair amount of time (say a couple of months), since it requires a fair bit of experimentation (and available time).
+This is _not_ currently compatible with 10.9 (Mavericks), since Mail.app internals have changed enough for method swizzling to fail and/or there might be issues with code signatures. I am looking for a solution, but I wouldn't be surprised if it took a fair amount of time (say a couple of months), since it requires a fair bit of experimentation.
 
 # So what does this do?
 
