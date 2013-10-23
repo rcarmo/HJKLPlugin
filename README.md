@@ -3,6 +3,10 @@ HJKLPlugin
 
 A plugin for vim keybindings in Mac OS X Mail
 
+# PLEASE NOTE
+
+This is _not_ currently compatible with 10.9 (Mavericks), since Mail.app internals have changed enough for method swizzling to fail. I am looking for a solution, but I wouldn't be surprised if it took a fair amount of time (say a couple of months), since it requires a fair bit of experimentation (and available time).
+
 # So what does this do?
 
 It's a simple plugin that lets you use `vim` keybindings in Mac OS X's Mail.app (up to and including version 6.6, which ships with 10.8.5)
@@ -15,6 +19,8 @@ It also allows you to hit `x` to delete a message and `v` to open the _first_ UR
 
 Before installing the plug-in, you'll need to make sure that Mail.app's plug-in support is turned on. For this, execute the following two commands in Terminal.app:
 
+
+    # For Mac OS X 10.8.x
     defaults write com.apple.mail EnableBundles -bool true
     defaults write com.apple.mail BundleCompatibilityVersion 3
 
@@ -33,13 +39,17 @@ It's a bit of Python that swizzles Objective-C methods and handles keypresses, m
 
 # In case of Mac OS X Upgrades
 
-Whenever Apple updates Mail.app, you need to update the compatibility UUIDs in `setup.py` and rebuild the plugin. To figure out the required UUIDs, you need to issue these two commands:
+Whenever Apple updates Mail.app, you need to update the compatibility UUIDs in `setup.py` and rebuild the plugin. To figure out the required UUIDs, you need to issue these  commands:
 
+    # For Mac OS X 10.8.x
     defaults read /Applications/Mail.app/Contents/Info PluginCompatibilityUUID
     defaults read /System/Library/Frameworks/Message.framework/Resources/Info PluginCompatibilityUUID
 
-Add the two new UUIDs to `setup.py` and reinstall.
+    # For Mac OS X 10.9.x
+    defaults read /Applications/Mail.app/Contents/Info | grep -i uuid
 
-Of course, Apple may well change Mail.app's UI in the future. In that case, you'll need to figure out which Cocoa views are involved and refactor the method swizzling.
+Add the new UUIDs to `setup.py` and reinstall.
+
+Of course, Apple can change Mail.app's UI as they please. In that case, you'll need to figure out which Cocoa views are involved and refactor the method swizzling.
 
 In either case, feel free to fork this project and send me a pull request. I am unlikely to upgrade all my machines to bleeding edge versions, so you'll likely to be ahead of me and able to help out others.
