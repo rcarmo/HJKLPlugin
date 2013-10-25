@@ -3,11 +3,11 @@ HJKLPlugin
 
 A plugin for vim keybindings in Mac OS X Mail
 
-# Mac OS X 10.9/Mavericks Compatibility Note
+## Mac OS X 10.9/Mavericks Compatibility Note
 
 This is currently compatible with 10.9 (Mavericks) _provided you're willing to sign the plugin yourself_. This is because Apple now requires code signatures (you can, however, use a self-signed certificate).
 
-# So what does this do?
+## So what does this do?
 
 It's a simple plugin that lets you use `vim` keybindings in Mac OS X's Mail.app (up to and including version 6.6, which ships with 10.8.5)
 
@@ -15,7 +15,7 @@ At the moment, it only works on the message view pane (to navigate all messages 
 
 It also allows you to hit `x` to delete a message and `v` to open the _first_ URL in an HTML message in the browser (useful if, like me, you miss Google Reader)
 
-# How do I install it?
+## How do I install it?
 
 Before installing the plug-in, you'll need to make sure that Mail.app's plug-in support is turned on. For this, execute the following two commands in Terminal.app:
 
@@ -30,16 +30,16 @@ Then run `sh install_signed.sh <certificate name>` under your own account.
 
 That will build, `codesign` and deploy the `.bundle` to your `~/Library/Mail/Bundles` folder.
 
-# What manner of dark magic is this?
+## What manner of dark magic is this?
 
 It's a bit of Python that swizzles Objective-C methods and handles keypresses, mapping them to the codes Mail.app expects. The whole codebase fits in a screenful, and you can tweak it to your liking with minimal effort.
 
-# References
+## References
 
 * [vim keybindings for Lion Mail.app](http://the.taoofmac.com/space/blog/2011/08/13/2110)
 * [Making your mail sit up and beg](http://the.taoofmac.com/space/blog/2011/08/11/2240)
 
-# In case of Mac OS X Upgrades
+## In case of Mac OS X Upgrades
 
 Whenever Apple updates Mail.app, you need to update the compatibility UUIDs in `setup.py` and rebuild the plugin. To figure out the required UUIDs, you need to issue these  commands:
 
