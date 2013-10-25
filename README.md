@@ -3,9 +3,9 @@ HJKLPlugin
 
 A plugin for vim keybindings in Mac OS X Mail
 
-# PLEASE NOTE
+# Mac OS X 10.9/Mavericks Compatibility Note
 
-This is _not_ currently compatible with 10.9 (Mavericks), since Mail.app internals have changed enough for method swizzling to fail and/or there might be issues with code signatures. I am looking for a solution, but I wouldn't be surprised if it took a fair amount of time (say a couple of months), since it requires a fair bit of experimentation.
+This is currently compatible with 10.9 (Mavericks) _provided you're willing to sign the plugin yourself_. This is because Apple now requires code signatures (you can, however, use a self-signed certificate).
 
 # So what does this do?
 
@@ -19,13 +19,14 @@ It also allows you to hit `x` to delete a message and `v` to open the _first_ UR
 
 Before installing the plug-in, you'll need to make sure that Mail.app's plug-in support is turned on. For this, execute the following two commands in Terminal.app:
 
-    # For Mac OS X 10.8.x
     defaults write com.apple.mail EnableBundles -bool true
     defaults write com.apple.mail BundleCompatibilityVersion 3
 
+Then run `sh install.sh` under your own account (i.e., do *not* use `sudo`, under any circumstances!).
+
 For installing in Mavericks (10.9), you'll also need to have a self-signed certificate in your `login` keychain. To create one, follow [this Mac Developer Library article][mdl].
 
-Then run `install.sh <certificate name>` under your own account (i.e., do *not* use `sudo`, under any circumstances!).
+Then run `sh install_signed.sh <certificate name>` under your own account.
 
 That will build, `codesign` and deploy the `.bundle` to your `~/Library/Mail/Bundles` folder.
 
@@ -47,7 +48,8 @@ Whenever Apple updates Mail.app, you need to update the compatibility UUIDs in `
     defaults read /System/Library/Frameworks/Message.framework/Resources/Info PluginCompatibilityUUID
 
     # For Mac OS X 10.9.x
-    defaults read /Applications/Mail.app/Contents/Info | grep -i uuid
+    defaults find UUID | grep MailCompatibility
+    defaults find UUID | grep MessageCompatibility
 
 Add the new UUIDs to `setup.py` and reinstall.
 
