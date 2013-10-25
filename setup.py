@@ -13,6 +13,7 @@ plist = {
     'NSPrincipalClass':'HJKLPlugin',
     'CFBundleInfoDictionaryVersion':'6.0',
     'CFBundlePackageType':'APPL',
+    'CFBundleIdentifier':'com.taoofmac.mail.plugins.HJKLPlugin',
     'CFBundleName':'HJKLPlugin',
     'CFBundleSignature':'????',
     'CFBundleGetInfoString':'HJKLPlugin 0.2',
@@ -43,7 +44,8 @@ plist = {
         '2183B2CD-BEDF-4AA6-AC18-A1BBED2E3354',
         '19B53E95-0964-4AAB-88F9-6D2F8B7B6037',
         '2B98D2DD-000B-4521-83EB-7BFCB9B161C8',
-        'DAFFB2B4-77BC-4C25-8CE1-2405E652D54B'
+        'DAFFB2B4-77BC-4C25-8CE1-2405E652D54B',
+        '0941BB9F-231F-452D-A26F-47A43863C991'
     ]
 }
 setup(

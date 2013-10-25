@@ -19,14 +19,15 @@ It also allows you to hit `x` to delete a message and `v` to open the _first_ UR
 
 Before installing the plug-in, you'll need to make sure that Mail.app's plug-in support is turned on. For this, execute the following two commands in Terminal.app:
 
-
     # For Mac OS X 10.8.x
     defaults write com.apple.mail EnableBundles -bool true
     defaults write com.apple.mail BundleCompatibilityVersion 3
 
-Run `install.sh` under your own account (i.e., do *not* use `sudo`, under any circumstances!). 
+For installing in Mavericks (10.9), you'll also need to have a self-signed certificate in your `login` keychain. To create one, follow [this Mac Developer Library article][mdl].
 
-That will build and deploy the `.bundle` to your `~/Library/Mail/Bundles` folder.
+Then run `install.sh <certificate name>` under your own account (i.e., do *not* use `sudo`, under any circumstances!).
+
+That will build, `codesign` and deploy the `.bundle` to your `~/Library/Mail/Bundles` folder.
 
 # What manner of dark magic is this?
 
@@ -53,3 +54,5 @@ Add the new UUIDs to `setup.py` and reinstall.
 Of course, Apple can change Mail.app's UI as they please. In that case, you'll need to figure out which Cocoa views are involved and refactor the method swizzling.
 
 In either case, feel free to fork this project and send me a pull request. I am unlikely to upgrade all my machines to bleeding edge versions, so you'll likely to be ahead of me and able to help out others.
+
+[mdl]: https://developer.apple.com/library/mac/documentation/Security/Conceptual/CodeSigningGuide/Procedures/Procedures.html#//apple_ref/doc/uid/TP40005929-CH4-SW2
