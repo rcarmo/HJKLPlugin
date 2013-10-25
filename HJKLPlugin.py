@@ -58,7 +58,8 @@ def view_first_link():
             payload = part.get_payload(None, True).replace('\r','')
             p.feed(payload)
             if len(p.hrefs):
-                subprocess.call(['/usr/bin/open',p.hrefs[0]])
+                ws = NSWorkspace.sharedWorkspace()
+                ws.openURL_(NSURL.URLWithString_(p.hrefs[0]))
                 return
 
 
@@ -96,6 +97,7 @@ def change_keyCode_(self, original, event, keymap):
     #NSLog('Handling key %d' % code)
     if code == 9: # v
         view_first_link()
+        return None # kill original event
     elif code in keymap.keys():
         #NSLog("Changing key %d to %d" % (code, keymap[code]))
         original(self, NSEvent.eventWithCGEvent_(CGEventCreateKeyboardEvent(None,keymap[code],True)));
