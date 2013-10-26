@@ -26,7 +26,7 @@ Then run `sh install.sh` under your own account (i.e., do *not* use `sudo`, unde
 
 For installing in Mavericks (10.9), you'll also need to have a self-signed certificate in your `login` keychain. To create one, follow [this Mac Developer Library article][mdl].
 
-Then run `sh install_signed.sh <certificate name>` under your own account.
+Then run `sh install_signed.sh "<certificate name>"` under your own account.
 
 That will build, `codesign` and deploy the `.bundle` to your `~/Library/Mail/Bundles` folder.
 

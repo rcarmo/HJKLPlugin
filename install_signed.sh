@@ -8,6 +8,7 @@ rm -rf ~/Library/Mail/Bundles/HJKLPlugin.mailbundle
 echo "Code signing with '$1'..."
 export CERT=$1
 find dist -print | egrep .so$ | xargs codesign -fv -s "$CERT" > /dev/null
+find dist -print | egrep -i python$ | xargs codesign -fv -s "$CERT" > /dev/null
 echo "Installing new version"
 mv dist/HJKLPlugin.mailbundle ~/Library/Mail/Bundles
 echo "Removing build files."
