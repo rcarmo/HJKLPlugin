@@ -48,7 +48,7 @@ def view_first_link():
         mail_app = SBApplication.applicationWithBundleIdentifier_("com.apple.Mail")
         source = mail_app.selection()[0].source()
     except Exception, e:
-        NSLog('Could not obtain source of message. %s' % e)
+        #NSLog('Could not obtain source of message. %s' % e)
         return
 
     p = HREFParser()
