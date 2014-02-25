@@ -9,7 +9,7 @@ This is currently compatible with 10.9.x (Mavericks) _provided you're willing to
 
 ## So what does this do?
 
-It's a simple plugin that lets you use `vim` keybindings in Mac OS X's Mail.app (up to and including version 6.6, which ships with 10.8.5, and 7.1, which ships with 10.9.1)
+It's a simple plugin that lets you use `vim` keybindings in Mac OS X's Mail.app (up to and including version 6.6, which ships with 10.8.5, and 7.2, which ships with 10.9.2)
 
 At the moment, it only works on the message view pane (to navigate all messages in a given thread) and in the message list (to move the selection up or down and to expand/collapse threads).
 
