@@ -9,13 +9,15 @@ This is currently compatible with 10.9.x (Mavericks) _provided you're willing to
 
 ## So what does this do?
 
-It's a simple plugin that lets you use `vim` keybindings in Mac OS X's Mail.app (up to and including version 6.6, which ships with 10.8.5, and 7.2, which ships with 10.9.2)
+It's a simple plugin that lets you use `vim` keybindings in Mac OS X's Mail.app (up to and including version 6.6, which ships with 10.8.5, and 7.3, which ships with 10.9.3)
 
 At the moment, it only works on the message view pane (to navigate all messages in a given thread) and in the message list (to move the selection up or down and to expand/collapse threads).
 
 It also allows you to hit `x` to delete a message and `v` to open the _first_ URL in an HTML message in the browser (useful if, like me, you miss Google Reader)
 
 ## How do I install it?
+
+If you're brave enough, you can try out a pre-built bundle from the [releases page](https://github.com/rcarmo/HJKLPlugin/releases).
 
 Before installing the plug-in, you'll need to make sure that Mail.app's plug-in support is turned on. For this, execute the following two commands in Terminal.app:
 
