@@ -57,6 +57,6 @@ Add the new UUIDs to `setup.py` and reinstall.
 
 Of course, Apple can change Mail.app's UI as they please. In that case, you'll need to figure out which Cocoa views are involved and refactor the method swizzling.
 
-In either case, feel free to fork this project and send me a pull request. I am unlikely to upgrade all my machines to bleeding edge versions, so you'll likely to be ahead of me and able to help out others.
+In either case, feel free to fork this project and send me a pull request. I am unlikely to upgrade all my machines to bleeding edge versions, so you'll likely be ahead of me and able to help out others.
 
 [mdl]: https://developer.apple.com/library/mac/documentation/Security/Conceptual/CodeSigningGuide/Procedures/Procedures.html#//apple_ref/doc/uid/TP40005929-CH4-SW2
