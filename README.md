@@ -17,14 +17,18 @@ It also allows you to hit `x` to delete a message and `v` to open the _first_ UR
 
 ## How do I install it?
 
-If you're brave enough, you can try out a pre-built bundle from the [releases page](https://github.com/rcarmo/HJKLPlugin/releases).
+If you're brave enough, you can try out a pre-built bundle from the [releases page](https://github.com/rcarmo/HJKLPlugin/releases) - just drop the `.bundle` to your `~/Library/Mail/Bundles` folder and restart Mail.
 
-Before installing the plug-in, you'll need to make sure that Mail.app's plug-in support is turned on. For this, execute the following two commands in Terminal.app:
+### Before installing
+
+Before installing the plug-in, you'll need to make sure that Mail.app's plug-in support is turned on by running the following two commands in Terminal.app:
 
     defaults write com.apple.mail EnableBundles -bool true
     defaults write com.apple.mail BundleCompatibilityVersion 3
 
-Then run `sh install.sh` under your own account (i.e., do *not* use `sudo`, under any circumstances!).
+### Doing it from source
+
+If you're running an older version of Mac OS X, run `sh install.sh` under your own account (i.e., do *not* use `sudo`, under any circumstances!).
 
 For installing in Mavericks (10.9), you'll also need to have a self-signed certificate in your `login` keychain. To create one, follow [this Mac Developer Library article][mdl].
 
