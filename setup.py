@@ -16,9 +16,9 @@ plist = {
     'CFBundleIdentifier':'com.taoofmac.mail.plugins.HJKLPlugin',
     'CFBundleName':'HJKLPlugin',
     'CFBundleSignature':'????',
-    'CFBundleGetInfoString':'HJKLPlugin 0.2.1',
-    'CFBundleVersion':'0.2.1',
-    'CFBundleShortVersionString':'0.2.1',
+    'CFBundleGetInfoString':'HJKLPlugin 0.2.2',
+    'CFBundleVersion':'0.2.2',
+    'CFBundleShortVersionString':'0.2.2',
     'SupportedPluginCompatibilityUUIDs': [
         '225E0A48-2CDB-44A6-8D99-A9BB8AF6BA04',
         'B3F3FC72-315D-4323-BE85-7AB76090224D',
@@ -50,7 +50,9 @@ plist = {
         '1CD40D64-945D-4D50-B12D-9CD865533506',
         '88ED2D4C-D384-4BF5-8E94-B533455E6AAF',
         'F4C26776-22B3-4A0A-96E1-EA8E4482E0B5',
-        'D1EFE124-86FF-4751-BF00-80B2C0D6F2E4'
+        'D1EFE124-86FF-4751-BF00-80B2C0D6F2E4',
+        'FBD91264-8866-4DEB-AFBF-F08505810056',
+        'DAFFB2B4-77BC-4C25-8CE1-2405E652D54B'
     ]
 }
 setup(

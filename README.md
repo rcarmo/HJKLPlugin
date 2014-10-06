@@ -1,15 +1,17 @@
 HJKLPlugin
 ==========
 
-A plugin for vim keybindings in Mac OS X Mail
+A plugin for vim key bindings in Mac OS X Mail
 
-## Mac OS X 10.9/Mavericks Compatibility Note
+## Mac OS X 10.10/10.9 (Yosemite/Mavericks) Compatibility Note
 
-This is currently compatible with 10.9.x (Mavericks) _provided you're willing to sign the plugin yourself_. This is because Apple now requires code signatures (you can, however, use a self-signed certificate).
+> Last version tested: Loaded Mail Version 8.0 (1988) / OS X Version 10.10 (14A379b)
+
+This is currently compatible with 10.9+ _provided you're willing to sign the plugin yourself_. This is because Apple now requires code signatures (you can, however, use a self-signed certificate).
 
 ## So what does this do?
 
-It's a simple plugin that lets you use `vim` keybindings in Mac OS X's Mail.app (up to and including version 6.6, which ships with 10.8.5, and 7.3, which ships with 10.9.4)
+It's a simple plugin that lets you use `vim` keybindings in Mac OS X's Mail.app (up to and including version 6.6, which ships with 10.8.5, 7.3, which ships with 10.9.4, and 8.0, which ships with 10.10)
 
 At the moment, it only works on the message view pane (to navigate all messages in a given thread) and in the message list (to move the selection up or down and to expand/collapse threads).
 
