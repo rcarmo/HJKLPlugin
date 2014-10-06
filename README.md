@@ -5,7 +5,7 @@ A plugin for vim key bindings in Mac OS X Mail
 
 ## Mac OS X 10.10/10.9 (Yosemite/Mavericks) Compatibility Note
 
-> Last version tested: Loaded Mail Version 8.0 (1988) / OS X Version 10.10 (14A379b)
+> Last version tested: Mail Version 8.0 (1988) / OS X Version 10.10 (14A379b)
 
 This is currently compatible with 10.9+ _provided you're willing to sign the plugin yourself_. This is because Apple now requires code signatures (you can, however, use a self-signed certificate).
 
