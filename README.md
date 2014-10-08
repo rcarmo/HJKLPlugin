@@ -5,7 +5,7 @@ A plugin for vim key bindings in Mac OS X Mail
 
 ## Mac OS X 10.10/10.9 (Yosemite/Mavericks) Compatibility Note
 
-> Last version tested: Mail Version 8.0 (1988) / OS X Version 10.10 (14A379b)
+> Last version tested: Mail Version 8.0 (1988) / OS X Version 10.10 (14A386b)
 
 This is currently compatible with 10.9+ _provided you're willing to sign the plugin yourself_. This is because Apple now requires code signatures (you can, however, use a self-signed certificate).
 
@@ -32,7 +32,7 @@ Before installing the plug-in, you'll need to make sure that Mail.app's plug-in 
 
 If you're running an older version of Mac OS X, run `sh install.sh` under your own account (i.e., do *not* use `sudo`, under any circumstances!).
 
-For installing in Mavericks (10.9), you'll also need to have a self-signed certificate in your `login` keychain. To create one, follow [this Mac Developer Library article][mdl].
+For installing in Mavericks (10.9) or Yosemite (10.10), you'll also need to have a self-signed certificate in your `login` keychain. To create one, follow [this Mac Developer Library article][mdl].
 
 Then run `sh install_signed.sh "<certificate name>"` under your own account.
 
@@ -55,7 +55,7 @@ Whenever Apple updates Mail.app, you need to update the compatibility UUIDs in `
     defaults read /Applications/Mail.app/Contents/Info PluginCompatibilityUUID
     defaults read /System/Library/Frameworks/Message.framework/Resources/Info PluginCompatibilityUUID
 
-    # For Mac OS X 10.9.x
+    # For Mac OS X 10.9.x/10.10.x
     defaults find UUID | grep MailCompatibility
     defaults find UUID | grep MessageCompatibility
 
