@@ -1,6 +1,13 @@
 #!/bin/sh
 echo "Cleaning up..."
 rm -rf dist/ build/
+echo "Checking compatibility UUIDs..."
+python check_for_compatibility_uuids.py
+if [ $? -ne 0 ]; then
+	echo "Install stopped"
+	exit 1
+fi
+
 echo "Building plugin..."
 python setup.py py2app > /dev/null
 echo "Removing any previous version of it"
